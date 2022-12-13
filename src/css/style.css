@@ -1,3 +1,4 @@
+
 body {
     height: 100vh;
     display: flex;
@@ -13,8 +14,8 @@ body {
 }
 
 .card {
-    height: calc( 33.333% -10px);
-    width: calc( 25% -10px);
+    height: calc( 33.333% - 10px);
+    width: calc(25% - 10px);
     margin: 5px;
     position: relative;
     box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3);
