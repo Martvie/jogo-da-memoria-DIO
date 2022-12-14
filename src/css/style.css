@@ -11,6 +11,7 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    perspective: 1000px;
 }
 
 .card {
@@ -21,6 +22,13 @@ body {
     box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3);
     cursor: pointer;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .9s ;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: 0.3s;
 }
 
 .card-face, 
@@ -31,4 +39,13 @@ body {
     position: absolute;
     border-radius: 5px;
     background-color: #fff;
+    backface-visibility: hidden;
+}
+
+.card-face {
+    transform: rotateY(180deg);
+}
+
+.card.flip {
+    transform: rotateY(180deg);
 }
