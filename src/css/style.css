@@ -49,3 +49,8 @@ body {
 .card.flip {
     transform: rotateY(180deg);
 }
+
+.hide {
+    opacity: 0;
+    transition: 6s;
+}

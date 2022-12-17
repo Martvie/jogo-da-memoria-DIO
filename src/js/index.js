@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
+let firstCardChildren, secondCardChildren
 let lockBoard = false;
 
 function flipCard() {
@@ -29,8 +30,12 @@ function checkCard() {
 }
 
 function disbleCards() {
-    firstCard.removeEventListner('click', flipCard);
-    secondCard.removeEventListner('click', flipCard);
+
+    hideCard(firstCard)
+    hideCard(secondCard)
+
+    firstCard.removeEventListner('click', flipCard());
+    secondCard.removeEventListner('click', flipCard());
 
     resetBoard()
 }
@@ -48,11 +53,11 @@ function unflipCard() {
 
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null]
+    [firstCard, secondCard, cardChildren] = [null, null, null]
 }
 
-(function shuffleCards(){
-    cards.forEach((card) =>{
+(function shuffleCards() {
+    cards.forEach((card) => {
         let randomPosition = Math.floor(Math.random() * 12);
         card.style.order = randomPosition;
     })
@@ -62,3 +67,10 @@ function resetBoard() {
 cards.forEach(card => {
     card.addEventListener('click', flipCard)
 })
+
+//
+function hideCard(card){
+    let cardChildren = card.children;
+    cardChildren[0].classList.add('hide');
+    card.style.boxShadow = "0px 0px 0px";
+}
