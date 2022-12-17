@@ -68,7 +68,6 @@ cards.forEach(card => {
     card.addEventListener('click', flipCard)
 })
 
-//
 function hideCard(card){
     let cardChildren = card.children;
     cardChildren[0].classList.add('hide');
