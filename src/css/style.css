@@ -2,6 +2,7 @@
 body {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     background-color:  #60C322;
 }
 
@@ -12,6 +13,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+}
+
+.attribution {
+    margin-left: 10px;
 }
 
 .card {
